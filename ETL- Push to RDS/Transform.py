@@ -1,6 +1,6 @@
 import Extract as et
 import pandas as pd
-access_token = et.accesstoken('c0ab671cf54e43ce914a8aa5b116f8d6','392dbc90b09046339e0a3816d79433cd')
+access_token = et.accesstoken('client ID','Client Secret')
 df1=et.get_track_data(access_token)
 
 
