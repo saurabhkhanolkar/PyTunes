@@ -61,7 +61,7 @@ def get_track_data(access_token):
     track_response = request.get('https://api.spotify.com/v1/audio-features/?ids='+str1 , headers=headers)
     response_dict = json.loads(track_response.text)
     list1=pd.DataFrame(response_dict)  
-    df=pd.DataFrame()
+    df1=pd.DataFrame()
     for i in range(len(list1)):
         df=df.append(pd.DataFrame(list1['audio_features'][i],index=[i]))
     df.drop(['type','uri','track_href','analysis_url','time_signature'],axis=1,inplace=True)
