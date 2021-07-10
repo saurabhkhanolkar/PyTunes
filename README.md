@@ -1,6 +1,6 @@
 # PyTunes 
 
-PyTunes is an **End to End Data driven Music recommendation engine** which recommends globally trending Spotify tracks based on your musical taste.
+PyTunes is an **End to End, Data driven Music recommendation engine** which recommends globally trending Spotify tracks based on your musical taste.
 
 ## 1) How to use?: 
 1) Open Spotify app or go to https://open.spotify.com/
