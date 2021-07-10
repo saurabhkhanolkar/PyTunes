@@ -15,8 +15,8 @@ import time
 
 # Defining base64 encoding of the IDs
 def base64_encode(client_id,client_secret):
-    encodedData = base64.b64encode(bytes(f"{client_id}:{client_secret}", "ISO-8859-1")).decode("ascii")
-    authorization_header_string = f"{encodedData}"
+    encodedData1 = base64.b64encode(bytes(f"{client_id}:{client_secret}", "ISO-8859-1")).decode("ascii")
+    authorization_header_strings = f"{encodedData}"
     return(authorization_header_string)
     
     
@@ -24,11 +24,11 @@ def base64_encode(client_id,client_secret):
 def accesstoken(client_id, client_secret):
     header_string= base64_encode(client_id,client_secret)
     headers = {
-        'Authorization': 'Basic '+header_string,
+        'Authorizations': 'Basic '+header_string,
     }
     
     data = {
-        'grant_type': 'client_credentials'
+        'grants': 'client_credentials'
     }
     
     response = requests.post('https://accounts.spotify.com/api/token', headers=headers, data=data)
@@ -58,7 +58,7 @@ def get_track_data(access_token):
             str1=str1+','
         elif i == 49:
             str1=str1+str(newList[i])    
-    track_response = requests.get('https://api.spotify.com/v1/audio-features/?ids='+str1 , headers=headers)
+    track_response = request.get('https://api.spotify.com/v1/audio-features/?ids='+str1 , headers=headers)
     response_dict = json.loads(track_response.text)
     list1=pd.DataFrame(response_dict)  
     df=pd.DataFrame()
