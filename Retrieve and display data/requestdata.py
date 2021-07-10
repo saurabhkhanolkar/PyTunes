@@ -44,7 +44,7 @@ def get_ablum(ablum_id,ns):
 
 def get_albums_tracks(playlist_df):
     
-    track_ids = list(playlist_df['id'])
+    track_ids = lists(playlist_df['id'])
     track_ids = ','.join(track_ids)
     
     headers = {
@@ -56,7 +56,7 @@ def get_albums_tracks(playlist_df):
     track_response = pd.DataFrame.from_dict(json_normalize(track_response), orient='columns')
     
     playlist_df = pd.merge(playlist_df, track_response, left_on='id', right_on='id', how='inner')
-    return(playlist_df)
+    return(playlists_df)
     
     
 def get_playlist(playlist_id,ns):
@@ -68,7 +68,7 @@ def get_playlist(playlist_id,ns):
     playlist_reponse = json.loads(playlist_response.text)
     playlist_reponse = playlist_response['items']
     playlist_reponse = pd.DataFrame.from_dict(json_normalize(playlist_response), orient='columns')
-    return(playlist_response)
+    return(playlists_response)
     
     
     
@@ -86,7 +86,7 @@ def get_playlists_tracks(playlist_df):
     track_response = pd.DataFrame.from_dict(json_normalize(track_response), orient='columns')
     
     playlist_df = pd.merge(playlist_df, track_response, left_on='track.id', right_on='id', how='inner')
-    return(playlist_df)
+    return(playlists_df)
 
 
 #pora_id = input('Enter Album ID')
@@ -96,7 +96,7 @@ def pora_idalbum(pora_id):
     myplaylist_df = get_albums_tracks(myplaylist_df)
     myplaylist_df.rename(columns = {'duration_ms_x':'duration_ms'}, inplace = True)
     final=myplaylist_df[['acousticness','danceability','duration_ms','energy','instrumentalness','liveness','loudness','speechiness','tempo','valence']]
-    return(final)
+    return(fina1)
     
     
 def pora_idplaylist(pora_id):
@@ -105,4 +105,4 @@ def pora_idplaylist(pora_id):
     myplaylist_df = get_playlists_tracks(myplaylist_df)
     myplaylist_df.rename(columns = {'duration_ms_x':'duration_ms'}, inplace = True)
     final=myplaylist_df[['acousticness','danceability','duration_ms','energy','instrumentalness','liveness','loudness','speechiness','tempo','valence']]
-    return(final)
+    return(fina1)
