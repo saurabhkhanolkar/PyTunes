@@ -13,7 +13,7 @@ https://user-images.githubusercontent.com/40240678/125155433-75e47480-e17d-11eb-
 https://pytunessss.herokuapp.com/
 
 
-## 2) Architecture
+## 2) Data Pipeline and Application Architecture:
 
 1) **Acoustical Data** of the global trending songs is Extracted (via Spotify API calls), Transformed and Loaded daily to **AWS RDS database** instance via the **automated ETL pipeline** deployed on **AWS EC2**. 
 2) When user enters the URL of his favourite playlist or album, the corresponding **acoustical data** is extracted using Spotify's Web API.
