@@ -26,3 +26,11 @@ https://pytunessss.herokuapp.com/
 1) Python(Flask framework, Pandas, Numpy, Sklearn, Matplotlib)
 2) AWS (RDS, EC2)
 3) CI/CD - Git and heroku
+
+
+
+● Built and deployed an automated ETL data pipeline on AWS to extract acoustic data of trending 
+songs daily from Spotify using API calls. AWS EC2 and RDS services were used.
+● Implemented a Data mining model in Python(Pandas , Numpy , SkLearn) to generate recommendations from the extracted data. 
+● Deployed the model to cloud, as a REST API endpoint using Flask and Heroku.
+● Implemented CI/CD using Git and Heroku.
